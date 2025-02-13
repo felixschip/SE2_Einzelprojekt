@@ -22,7 +22,7 @@ class GameResultService {
     /**
      * Kotlin-idiomatic for:
      * fun deleteGameResult(gameResultId: Long) {
-     *     gameResults.removeIf({gameResult -> gameResult.id == gameResultId })
+     *     gameResults.removeIf({ gameResult -> gameResult.id == gameResultId })
      * }
      */
     fun deleteGameResult(id: Long) = gameResults.removeIf { it.id == id }

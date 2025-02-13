@@ -71,4 +71,5 @@ class GameResultServiceTests {
         assertEquals(gameResult2, res[1])
         assertEquals(2, res[1].id)
     }
+
 }

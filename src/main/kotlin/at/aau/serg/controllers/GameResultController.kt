@@ -29,7 +29,5 @@ class GameResultController(
     fun deleteGameResult(@PathVariable gameResultId: Long) {
         gameResultService.deleteGameResult(gameResultId)
     }
-
-
-
+    
 }
