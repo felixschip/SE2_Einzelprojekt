@@ -179,7 +179,10 @@ class RepositoryValidator(private val client: HttpClient) {
 
 class CommitValidator(private val client: HttpClient) {
     suspend fun validate(repoUrl: String, commitHash: String) {
-        val apiUrl = "${repoUrl.replace("github.com", "api.github.com/repos")}/commits/$commitHash"
+        val apiUrl = repoUrl
+            .removeSuffix(".git")
+            .replace("github.com", "api.github.com/repos") +
+                "/commits/$commitHash"
         val response = client.get(apiUrl) {
             headers { append("Accept", "application/vnd.github.v3+json") }
         }
